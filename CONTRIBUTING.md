@@ -9,44 +9,44 @@ To maintain production-grade quality, rigorous mathematical consistency, and cle
 ## 🏛️ 1. Multi-Repository Architecture Standards
 
 The course is modularized into:
-* **1 Master Navigator Repository:** `kuka-industrial-robotics-syllabus` (or `-course`) — contains no lesson code; acts as syllabus, mathematical cheatsheet, and navigation hub.
-* **5 Phase Repositories:** Independent repositories containing code, simulation assets, and laboratory exercises organized by chapter:
-  1. `kuka-robotics-phase-1-basics`
-  2. `kuka-robotics-phase-2-kinematics`
-  3. `kuka-robotics-phase-3-singularity`
-  4. `kuka-robotics-phase-4-krl-programming`
-  5. `kuka-robotics-phase-5-advanced-integration`
+* **1 Master Navigator Repository:** `kuka-industrial-robotics-course` (or `-syllabus`) — contains no lesson code; acts as syllabus, mathematical cheatsheet, and navigation hub.
+* **6 Phase Repositories:** Independent repositories containing code, simulation assets, and laboratory exercises organized by phase:
+  1. `kuka-robotics-phase-1-fundamentals` (Lessons 01 - 04)
+  2. `kuka-robotics-phase-2-kinematics-and-math` (Lessons 05 - 10)
+  3. `kuka-robotics-phase-3-differential-kinematics` (Lessons 11 - 14)
+  4. `kuka-robotics-phase-4-krl-programming` (Lessons 15 - 19)
+  5. `kuka-robotics-phase-5-advanced-integration` (Lessons 20 - 23)
+  6. `kuka-robotics-phase-6-industrial-applications` (Lessons 24 - 25)
 
-### Mandatory GitHub Topics
-Every repository in the course ecosystem MUST be tagged with the following 6 identical topics:
+### Mandatory Global GitHub Topics
+Every repository in the course ecosystem MUST be tagged with the following 7 identical topics:
 ```
-kuka-robotics-course, mechatronics, krl-programming, robot-kinematics, samdu, tsu
+kuka-robotics-course, mechatronics, krl-programming, ros2-robotics, industrial-automation, samdu, tsu
 ```
 
 ---
 
-## 📁 2. Topic Directory Boilerplate Structure
+## 📁 2. Mandatory Topic Directory Boilerplate Structure
 
-Inside each Phase repository, every individual topic folder (e.g., `03-rodrigues-formula/`, `10-krl-basics/`) must maintain this standard internal hierarchy:
+Inside each Phase repository, every individual topic folder (e.g., `05-rodrigues-rotation-formula/`, `15-krl-syntax-and-variables/`) must maintain this standard internal hierarchy:
 
 ```
-kuka-robotics-phase-X-[name]/
-└── [two-digit-index]-[topic]/
-    ├── src/
-    │   ├── krl/                # Industrial KRL programs (.src, .dat, .sub)
-    │   │   ├── main.src
-    │   │   └── main.dat
-    │   └── scripts/            # Computation & verification scripts (Python, MATLAB)
-    │       ├── kinematics.py
-    │       └── test_solution.py
-    ├── sim/                    # Simulation assets & models
-    │   ├── kr6_r900_2.urdf     # Robot description format
-    │   └── cell_scene.vcmx     # KUKA.Sim Pro simulation layout
-    ├── docs/                   # Documentation assets
-    │   ├── figures/            # Diagrams, trajectory plots, schematics (.png, .svg)
-    │   └── derivations.md      # In-depth mathematical proofs
-    ├── CLAUDE.md               # AI developer guidelines & repository context
-    └── README.md               # Student-facing guide, theory, equations, laboratory task
+[two-digit-index]-[topic-name]/
+├── src/
+│   ├── krl/                # Industrial KRL programs (.src, .dat, .sub)
+│   │   ├── main.src
+│   │   └── main.dat
+│   └── scripts/            # Computation & verification scripts (Python, MATLAB)
+│       ├── kinematics.py
+│       └── test_solution.py
+├── sim/                    # Simulation assets & models
+│   ├── kr6_r900_2.urdf     # Robot description format
+│   └── cell_scene.vcmx     # KUKA.Sim Pro simulation layout
+├── docs/                   # Documentation assets
+│   ├── figures/            # Diagrams, trajectory plots, schematics (.png, .svg)
+│   └── derivations.md      # In-depth mathematical proofs
+├── CLAUDE.md               # AI developer guidelines & repository context
+└── README.md               # Student-facing guide, theory, equations, laboratory task
 ```
 
 ---
@@ -65,11 +65,11 @@ kuka-robotics-phase-X-[name]/
       """Computes 3x3 rotation matrix using Rodrigues formula."""
       ...
   ```
-* Include unit tests using `pytest` for all forward/inverse kinematics and matrix algorithms.
+* Include unit tests using `pytest` for all forward/inverse kinematics, Jacobian, and vision algorithms.
 
 ### 3.2 KRL (KUKA Robot Language) Standards
 * All KRL files must be paired: `.src` (logic) and `.dat` (data definitions).
-* Capitalize all KRL keywords, system variables, and motion commands (`DEF`, `END`, `PTP`, `LIN`, `CIRC`, `$POS_ACT`, `$BASE`, `$TOOL`).
+* Capitalize all KRL keywords, system variables, and motion commands (`DEF`, `END`, `PTP`, `LIN`, `CIRC`, `SLIN`, `SCIRC`, `$POS_ACT`, `$BASE`, `$TOOL`).
 * Initialize all `FRAME` and `E6POS` variables with descriptive names.
 
 ### 3.3 Mathematical & LaTeX Standards

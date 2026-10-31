@@ -1,224 +1,261 @@
-# KUKA Industrial Robotics Course: Master Navigator & Syllabus
-## 6-Axis Manipulator Kinematics, KRL Programming & Computer Vision Integration
+# KUKA Industrial Robotics Course: Master Navigator & Global Syllabus
+## 25-Lesson Academic & Industrial Specialization Program | KUKA KR 6 R900-2 (KR AGILUS-2)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Robot: KUKA KR 6 R900-2](https://img.shields.io/badge/Manipulator-KUKA%20KR%206%20R900--2%20(AGILUS)-orange.svg)](https://www.kuka.com)
-[![Controller: KUKA KRC4/KRC5](https://img.shields.io/badge/Controller-KUKA%20KR%20C4%20%7C%20KR%20C5-red.svg)](https://www.kuka.com)
+[![Manipulator: KUKA KR 6 R900-2](https://img.shields.io/badge/Manipulator-KUKA%20KR%206%20R900--2%20(AGILUS)-orange.svg)](https://www.kuka.com)
+[![Controller: KRC4 & KRC5](https://img.shields.io/badge/Controller-KUKA%20KR%20C4%20%7C%20KR%20C5-red.svg)](https://www.kuka.com)
 [![Academic Alliance](https://img.shields.io/badge/Academic%20Alliance-SamDU%20%26%20TSU-blue.svg)](https://www.samdu.uz)
-[![GitHub Topics](https://img.shields.io/badge/Topics-kuka--robotics--course%20%7C%20mechatronics%20%7C%20krl--programming%20%7C%20robot--kinematics%20%7C%20samdu%20%7C%20tsu-lightgrey.svg)](#)
+[![GitHub Topics](https://img.shields.io/badge/Topics-kuka--robotics--course%20%7C%20mechatronics%20%7C%20krl--programming%20%7C%20ros2--robotics%20%7C%20industrial--automation%20%7C%20samdu%20%7C%20tsu-lightgrey.svg)](#)
 
 ---
 
-## 🧭 Kurs Haqida va Umumiy Konseptsiya
+## 🧭 Kurs Arxitekturasi va Loyiha Konseptsiyasi
 
-**KUKA Industrial Robotics Course** — sanoat robototexnikasi bo'yicha professional ochiq ta'lim kursi va ilmiy-tadqiqot platformasi. Kurs 6 erkinlik darajali (6-DoF) **KUKA KR 6 R900-2 (KR AGILUS-2)** manipulyatori, KUKA KRC4/KRC5 kontrolleri va KUKA.Sim Pro simulyatsiya muhiti negizida ishlab chiqilgan.
+**KUKA Industrial Robotics Course** — zamonaviy sanoat robototexnikasi, manipulyatorlar kinematikasi/dinamikasi, KRL dasturlash va robotlashtirilgan sunʼiy intellekt integratsiyasi boʻyicha ishlab chiqilgan 25 darslik ochiq manbali fundamental taʼlim platformasi.
 
-Kurs **Samarqand Davlat Universiteti (SamDU)** hamda **Tomsk Davlat Universiteti (TSU)** Mexatronika va Robototexnika kafedralarining amaliy tajribasi va PhD ilmiy-tadqiqot ishlari asosida yaratilgan.
+Kurs **Samarqand Davlat Universiteti (SamDU)** va **Milliy Tadqiqot Tomsk Davlat Universiteti (TSU)** Mexatronika va Robototexnika kafedralari hamda laboratoriyalarining koʻp yillik ilmiy-tadqiqot (PhD) va amaliy ishlab chiqarish tajribasi asosida shakllantirildi.
 
-### 🏛️ Yangilangan Modulli Repozitoriylar Strukturasi (Boblar boʻyicha)
-
-Monolitik tizim o'rniga kurs **1 ta Navigator (Mundarija) Hubi** va **5 ta mustaqil Bob (Phase) Repozitoriylari**ga ajratilgan:
+Ushbu repozitoriy (**Master Navigator**) butun oʻquv kursining **"Boshqaruv Pulti"** boʻlib, oʻzida hech qanday dars kodlarini saqlamaydi. U 6 ta ixtisoslashtirilgan Faza repozitoriyalariga yoʻllanma beruvchi global navigator, matematik formulalar markazi ([MATH_CHEATSHEET.md](file:///c:/Users/muzaf/Desktop/kuka-robotics-course/MATH_CHEATSHEET.md)) va loyiha vizitkasi vazifasini bajaradi.
 
 ```
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│             kuka-industrial-robotics-course (Navigator / Syllabus Hub)                 │
-│         Faqat umumiy kurs mundarijasi, matematik cheatsheet va havolalar (links)       │
-└───────────────────────────────────────────┬────────────────────────────────────────────┘
-                                            │
-    ┌───────────────────┬───────────────────┼───────────────────┬────────────────────┐
-    ▼                   ▼                   ▼                   ▼                    ▼
-[ 1-BOB: BASICS ]  [ 2-BOB: KINEMATICS ] [ 3-BOB: SINGULARITY ] [ 4-BOB: KRL ]   [ 5-BOB: VISION ]
-Phase 1 Repo       Phase 2 Repo         Phase 3 Repo           Phase 4 Repo     Phase 5 Repo
-├── 01-intro       ├── 03-rodrigues     ├── 08-jacobian        ├── 10-krl-basics├── 13-cv-vision
-└── 02-sim-setup   ├── 04-rot-matrices  └── 09-singularity     ├── 11-motion
-                   ├── 05-dh-params                            └── 12-io
-                   ├── 06-forward-kin
-                   └── 07-inverse-kin
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        kuka-industrial-robotics-course (Master Navigator Hub)                          │
+│                Global Mundarija, Matematik Cheatsheet, Arxitektura Standartlari & Yoʻllanmalar         │
+└───────────────────────────────────────────────────┬────────────────────────────────────────────────────┘
+                                                    │
+    ┌───────────────────────┬───────────────────────┼───────────────────────┬───────────────────────┐
+    ▼                       ▼                       ▼                       ▼                       ▼
+[ Phase 1: FUNDAMENTALS ]  [ Phase 2: KINEMATICS ] [ Phase 3: DIFFERENTIAL ] [ Phase 4: KRL CODING ] [ Phase 5: INTEGRATION ]
+4 Dars: 01 - 04            6 Dars: 05 - 10         4 Dars: 11 - 14          5 Dars: 15 - 19         4 Dars: 20 - 23
+                                                    │
+                                                    └───────────────────────────────────────────────┐
+                                                                                                    ▼
+                                                                                        [ Phase 6: APPLICATIONS ]
+                                                                                        2 Dars: 24 - 25
 ```
 
 ---
 
-## 🌐 Boblar Repozitoriylari va Mavzular Mundarijasi
+## 🦾 Asosiy Manipulyator: KUKA KR 6 R900-2 (KR AGILUS-2)
 
-| Bob | Repozitoriy Havolasi (Phase Repo) | Ichki Mavzular Jildlari | Texnologiyalar & Stack |
+Kursdagi barcha simulyatsiyalar (`.vcmx`), URDF kinematik zanjirlari, Denavit-Hartenberg parametrlari, KRL harakat dasturlari va sunʼiy intellekt orqali tutish algoritmlari **KUKA KR 6 R900-2** (KR AGILUS-2 seriyasi, KRC4 compact / KRC5 micro kontrolleri) manipulyatoriga kalibrlangan.
+
+| Parametr / Xususiyat | Qiymati | Muhandislik va Amaliy Ahamiyati |
+| :--- | :--- | :--- |
+| **Manipulyator Turi** | 6 oʻqli vertikal antropomorfik robot | 6 erkinlik darajasi (6-DoF) sferik bilak bilan ($A_4, A_5, A_6$) |
+| **Maksimal Yuk Koʻtarish (Payload)** | $6.0\text{ kg}$ | Yuqori tezlikdagi yigʻuv, texnik koʻrish kameralari va tutqichlar uchun |
+| **Maksimal Yetib Borish (Reach)** | $901.5\text{ mm}$ | Sferik ishchi fazo tahlili va chegaraviy nuqtalarni hisoblash |
+| **Takrorlanuvchanlik (ISO 9283)** | $\pm 0.02\text{ mm}$ | Sub-millimetrli aniqlik: Hand-Eye kalibratsiya va nozik yigʻuv |
+| **Boshqaruv Tizimi (Controller)** | KRC4 compact / KRC5 micro | KSS 8.3 / 8.6 / 8.7 proshivkalari, WorkVisual 6.0+ |
+| **Dasturlash Pulti (Teach Pendant)** | KUKA smartPAD-2 | Multi-touch displey, 6D Space Mouse, holatlar monitoringi |
+| **Oʻqlar Harakat Diapazoni** | $A_1: \pm 170^\circ, \quad A_2: -190^\circ / +45^\circ$ | Kinematik boʻgʻin cheklovlari va teskari kinematika |
+| | $A_3: -120^\circ / +156^\circ, \quad A_4: \pm 185^\circ$ | Qulay ishchi hududni rejalashtirish |
+| | $A_5: \pm 120^\circ, \quad A_6: \pm 350^\circ$ | Bilak singulyarligi tahlili ($A_5 = 0^\circ$) |
+| **Oʻqlar Maksimal Burchak Tezliklari** | $A_1: 360^\circ/\text{s}, \quad A_2: 300^\circ/\text{s}, \quad A_3: 360^\circ/\text{s}$ | Yuqori dinamik trayektoriya rejalashtirish |
+| | $A_4: 381^\circ/\text{s}, \quad A_5: 388^\circ/\text{s}, \quad A_6: 615^\circ/\text{s}$ | Singulyarlik hududidan oʻtishda tezlik sakrashlari nazorati |
+
+---
+
+## 🌐 7 Ta Repozitoriya va 25 Ta Darsning Global Xaritasi
+
+| Faza | Repozitoriy Nomi va Havolasi | Darslar | Asosiy Texnologiyalar & Ilmiy Asos |
 | :---: | :--- | :--- | :---: |
-| **1-Bob** | 🔗 [**`kuka-robotics-phase-1-basics`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-1-basics)<br>*(Kirish va Simulyatsiya)* | • [`01-introduction`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-1-basics/tree/main/01-introduction)<br>• [`02-simulation-setup`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-1-basics/tree/main/02-simulation-setup) | KUKA smartPAD, KUKA.Sim Pro, OfficeLite, WorkVisual, URDF |
-| **2-Bob** | 🔗 [**`kuka-robotics-phase-2-kinematics`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics)<br>*(Matematika va Kinematika)* | • [`03-rodrigues-formula`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics/tree/main/03-rodrigues-formula)<br>• [`04-rotation-matrices`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics/tree/main/04-rotation-matrices)<br>• [`05-dh-parameters`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics/tree/main/05-dh-parameters)<br>• [`06-forward-kinematics`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics/tree/main/06-forward-kinematics)<br>• [`07-inverse-kinematics`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics/tree/main/07-inverse-kinematics) | Lie Algebra $\mathfrak{so}(3)$, $SO(3)$, Rodrigues, Quaternions, DH Parameters, Pieper IK |
-| **3-Bob** | 🔗 [**`kuka-robotics-phase-3-singularity`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-3-singularity)<br>*(Yakobian va Singulyarlik)* | • [`08-jacobian-matrix`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-3-singularity/tree/main/08-jacobian-matrix)<br>• [`09-singularity-analysis`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-3-singularity/tree/main/09-singularity-analysis) | Geometrik Yakobian $J(\vec{q})$, $\det(J)=0$, Wrist / Shoulder / Boundary Singularity, Yoshikawa Ellipsoid |
-| **4-Bob** | 🔗 [**`kuka-robotics-phase-4-krl-programming`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-4-krl-programming)<br>*(KRL Dasturlash)* | • [`10-krl-basics`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-4-krl-programming/tree/main/10-krl-basics)<br>• [`11-motion-commands`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-4-krl-programming/tree/main/11-motion-commands)<br>• [`12-io-interfacing`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-4-krl-programming/tree/main/12-io-interfacing) | KRL (`.src`, `.dat`), `PTP`, `LIN`, `CIRC`, `SLIN`, `SCIRC`, `$ADVANCE`, WorkVisual I/O, EtherCAT |
-| **5-Bob** | 🔗 [**`kuka-robotics-phase-5-advanced-integration`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-5-advanced-integration)<br>*(Computer Vision)* | • [`13-computer-vision-integration`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-5-advanced-integration/tree/main/13-computer-vision-integration) | Pinhole Model, PnP, `cv2.Rodrigues()`, Hand-Eye $AX = XB$ (Tsai-Lenz), Visual Pick & Place |
+| **Navigator** | 🌐 [**`kuka-industrial-robotics-course`**](https://github.com/muzaffarbekmustafayev/kuka-industrial-robotics-syllabus) | Mundarija, Formulalar markazi | Markdown, KaTeX, Python CLI Scaffolder |
+| **Phase 1** | 📦 [**`kuka-robotics-phase-1-fundamentals`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-1-fundamentals)<br>*(Asoslar, Xavfsizlik va Digital Twin)* | • `01-introduction-to-kuka-agilus`<br>• `02-smartpad-and-coordinate-systems`<br>• `03-simulation-setup-digital-twin`<br>• `04-safety-and-safeoperation` | smartPAD, WORLD/BASE/TOOL/JOINT, KUKA.Sim Pro, OfficeLite VRC, SafeOperation (ISO 10218) |
+| **Phase 2** | 📦 [**`kuka-robotics-phase-2-kinematics-and-math`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics-and-math)<br>*(Fazoviy Geometriya va Kinematika)* | • `05-rodrigues-rotation-formula`<br>• `06-rotation-matrices-and-quaternions`<br>• `07-dh-parameters-modelling`<br>• `08-forward-kinematics-solver`<br>• `09-inverse-kinematics-analytical`<br>• `10-numerical-inverse-kinematics` | Rodrigues $\mathfrak{so}(3)$, KUKA Euler $Z-Y'-X''$ ($A,B,C$), Quaternions $\mathbb{H}$, DH Parameters, Forward Kinematics, Pieper IK (8 yechim), Newton-Raphson |
+| **Phase 3** | 📦 [**`kuka-robotics-phase-3-differential-kinematics`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-3-differential-kinematics)<br>*(Yakobian, Singulyarlik va Dinamika)* | • `11-jacobian-matrix-derivation`<br>• `12-singularity-analysis`<br>• `13-robot-dynamics-and-forces`<br>• `14-force-torque-control` | Geometrik Yakobian $J(\vec{q})$, Singulyarliklar (Wrist/Arm/Pitch), Nyuton-Eyler & Lagranj, KUKA.ForceTorqueControl (Impedance/Admittance) |
+| **Phase 4** | 📦 [**`kuka-robotics-phase-4-krl-programming`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-4-krl-programming)<br>*(KRL Dasturlash Tili va Sanoat Tarmoqlari)* | • `15-krl-syntax-and-variables`<br>• `16-advanced-motion-commands`<br>• `17-logic-and-interrupts`<br>• `18-industrial-io-and-fieldbus`<br>• `19-subprograms-and-expert-programming` | KRL (`.src`, `.dat`), `FRAME`/`POS`/`E6POS`, `PTP`/`LIN`/`CIRC`/`SLIN`/`SCIRC`, `C_PTP`/`C_DIS`, `INTERRUPT`, ProfiNet, EtherCAT, WorkVisual |
+| **Phase 5** | 📦 [**`kuka-robotics-phase-5-advanced-integration`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-5-advanced-integration)<br>*(RSI, ROS2, MoveIt2 va Computer Vision)* | • `20-kuka-rsi-interface`<br>• `21-ros2-driver-integration`<br>• `22-moveit2-trajectory-planning`<br>• `23-computer-vision-pick-and-place` | KUKA RSI (<12ms XML stream), ROS2 Humble/Iron, `kuka_robot_drivers`, MoveIt2 collision avoidance, OpenCV PnP, Hand-Eye $AX = XB$ |
+| **Phase 6** | 📦 [**`kuka-robotics-phase-6-industrial-applications`**](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-6-industrial-applications)<br>*(Sanoatdagi Amaliy Loyihalar)* | • `24-trajectory-welding-and-glueing`<br>• `25-palletizing-and-sorting-system` | 3D payvandlash va yelimlash choklari, Konveyerga moslashuvchi (Conveyor Tracking) palletizatsiya va aqlli saralash |
 
 ---
 
-## 🦾 KUKA KR 6 R900-2 (KR AGILUS-2) Texnik Tavsifi
-
-Kursdagi barcha hisob-kitoblar, kinematik formulalar, DH jadvallari va KRL trayektoriyalari ushbu robot modeliga asoslangan:
-
-* **Manipulyator turi:** 6 o'qli vertikal antropomorfik sanoat roboti
-* **Maksimal yuk ko'tarish qobiliyati (Rated Payload):** $6\text{ kg}$
-* **Maksimal yetib borish masofasi (Max Reach):** $901.5\text{ mm}$
-* **Pozitsiya takrorlanuvchanligi (ISO 9283 Repeatability):** $\pm 0.02\text{ mm}$
-* **Boshqaruv tizimi:** KUKA KRC4 compact / KRC5 micro (KSS 8.3 / 8.6 / 8.7)
-* **O'qlar burilish burchaklari (Software Joint Limits):**
-  * $A_1: \pm 170^\circ$
-  * $A_2: -190^\circ / +45^\circ$
-  * $A_3: -120^\circ / +156^\circ$
-  * $A_4: \pm 185^\circ$
-  * $A_5: \pm 120^\circ$
-  * $A_6: \pm 350^\circ$
-* **O'qlar maksimal tezliklari:**
-  * $A_1: 360^\circ/\text{s}, \quad A_2: 300^\circ/\text{s}, \quad A_3: 360^\circ/\text{s}$
-  * $A_4: 381^\circ/\text{s}, \quad A_5: 388^\circ/\text{s}, \quad A_6: 615^\circ/\text{s}$
+## 📚 25 Ta Darsning Mukammal Nazariy va Amaliy Mundarijasi
 
 ---
 
-## 📖 Chuqurlashtirilgan Nazariy va Amaliy O'quv Rejasi (Boblar Kesimida)
+### 📁 Phase 1: Asoslar, Xavfsizlik va Digital Twin
+*Repozitoriy:* [`kuka-robotics-phase-1-fundamentals`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-1-fundamentals)
 
-### ⚙️ 1-BOB: Kirish va Simulyatsiya Muhiti
-*Ombor: [`kuka-robotics-phase-1-basics`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-1-basics)*
+#### • 01-introduction-to-kuka-agilus
+* **Nazariya:** KUKA KR 6 R900-2 manipulyatorining mexanik anatomiyasi, oʻqlar joylashuvi ($A_1 \dots A_6$), KRC4 va KRC5 kontrollerlarining arxitekturasi hamda ISO 10218-1/2 xalqaro xavfsizlik standartlari.
+* **Amaliyot:** Robotning fazodagi ishchi zonasi (workspace reach envelope) chegaralarini aniqlash va virtual/real pultda oʻqlarni dastlabki tekshirish.
 
-* **01-Mavzu. Sanoat robototexnikasi asoslari va KR AGILUS manipulyatori:**
-  * Sanoat robotlari xavfsizlik standartlari (ISO 10218-1/2, ISO/TS 15066).
-  * KUKA KR 6 R900-2 apparat arxitekturasi: bo'g'inlar, motorlar, tormozlar, resolverlar.
-  * KUKA smartPAD yordamida robotni boshqarish: Jogging rejimlari (Axis, World, Tool, Base).
-* **02-Mavzu. Virtual simulyatsiya muhitini o'rnatish va sozlash:**
-  * **KUKA.Sim Pro (3.1 / 4.x)** dasturiy ta'minoti va 3D virtual hujayra qurish.
-  * **KUKA OfficeLite** (Virtual Robot Controller — VRC) ni ishga tushirish va KSS sozlamalari.
-  * **KUKA WorkVisual** loyihasini yaratish, robot kinematik parametrlarini yuklash.
-  * URDF / Xacro modelini eksport qilish va ROS 2 MoveIt muhitiga integratsiya.
+#### • 02-smartpad-and-coordinate-systems
+* **Nazariya:** KUKA smartPAD interfeysi, tezkor tugmalar, 6D Space Mouse ishlash fizikasi. WORLD (dunyo), BASE (ish stoli), TOOL (asbob) va JOINT (oʻqlar) koordinata tizimlari mexanikasi.
+* **Amaliyot:** Robotni turli koordinata rejimlarida qoʻlda (Jogging) xavfsiz boshqarish, asbob uchini bitta fazoviy nuqtada ushlab turib orientatsiyani oʻzgartirish.
 
----
+#### • 03-simulation-setup-digital-twin
+* **Nazariya:** KUKA.Sim Pro va KUKA OfficeLite (Virtual Robot Controller — VRC) oʻrtasidagi aloqa koʻprigi mexanizmi. Haqiqiy vaqtli deterministik simulyatsiya prinsiplari.
+* **Amaliyot:** KR AGILUS manipulyatori uchun toʻliq Raqamli Egizak (Digital Twin) muhitini noldan sozlash, WorkVisual orqali robot modelini yuklash.
 
-### 🧮 2-BOB: Matematika va Kinematika
-*Ombor: [`kuka-robotics-phase-2-kinematics`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics)*
-
-* **03-Mavzu. Fazoviy burilishlar va Rodrig formulasi:**
-  * Koordinatalar tizimi va qiya-simmetrik (skew-symmetric) matritsalar $\mathfrak{so}(3)$.
-  * Ixtiyoriy vektor $[\vec{k}]_\times$ operatori va vektorli ko'paytma.
-  * Fazoda ixtiyoriy $\vec{k}$ o'qi atrofida $\theta$ burchakka burish:
-    $$\vec{v}_{rot} = \vec{v}\cos\theta + (\vec{k}\times\vec{v})\sin\theta + \vec{k}(\vec{k}\cdot\vec{v})(1-\cos\theta)$$
-  * Matritsaviy Rodrig formulasi:
-    $$R(\vec{k}, \theta) = I + \sin(\theta) K + (1 - \cos(\theta)) K^2$$
-  * Teskari Rodrig formulasi: $\text{tr}(R) = 1 + 2\cos\theta$ orqali $\theta$ va $\vec{k}$ ni ajratish.
-* **04-Mavzu. Aylanish matritsalari, Eyler burchaklari va Kvaternionlar:**
-  * Maxsus Ortogonal Guruh $SO(3)$ va uning Lie algebrasi.
-  * KUKA $Z-Y'-X''$ (Tait-Bryan: $A, B, C$) burchaklari va Gimbal Lock ($B = \pm 90^\circ$).
-  * Giperkompleks sonlar va birlik kvaternionlar: $\mathbf{q} = [w, x, y, z] = [\cos(\theta/2), \vec{k}\sin(\theta/2)]$.
-  * Rodrig $\longleftrightarrow$ Kvaternion $\longleftrightarrow$ KUKA Euler o'zaro bog'liqlik ko'prigi.
-* **05-Mavzu. Denavit-Hartenberg (DH) parametrlari:**
-  * Standart va Modifikatsiyalangan DH qoidalari.
-  * KUKA KR 6 R900-2 uchun 6 ta bo'g'in koordinatalar tizimini o'rnatish ($z_i, x_i$).
-  * Link parametrlari jadvali ($a_i, \alpha_i, d_i, \theta_i$).
-* **06-Mavzu. To'g'ri kinematika (Forward Kinematics):**
-  * Bir hil transformatsiya matritsalari zanjiri: $T_0^6(\vec{q}) = A_1 A_2 A_3 A_4 A_5 A_6$.
-  * Flanetsning fazoviy holati ($X, Y, Z, A, B, C$) ni hisoblash.
-  * Hisoblangan natijalarni KUKA `$POS_ACT` tizim o'zgaruvchisi bilan solishtirish.
-* **07-Mavzu. Teskari kinematika (Inverse Kinematics):**
-  * Sferik bilak ($A_4, A_5, A_6$ o'qlari bitta nuqtada kesishishi) uchun Piper (Pieper) dekoupling usuli.
-  * Bilak markazini ajratish: $\vec{p}_{wc} = \vec{p}_e - d_6 \vec{a}$.
-  * 8 ta analitik kinematik yechim (Arm Right/Left, Elbow Up/Down, Wrist Flip/No-Flip).
-  * KUKA Status ($S$) va Turn ($T$) butun sonli bitlarining fizik ma'nosi.
+#### • 04-safety-and-safeoperation
+* **Nazariya:** Sanoat xavfsizligi normalari (ISO 13849-1, ISO/TS 15066). KUKA SafeOperation apparat va dasturiy xavfsizlik texnologiyasi.
+* **Amaliyot:** Virtual simulyator muhitida xavfsiz monitoring zonalari (Cell Safe Zones), oʻqlar chegaralari va xavfsiz tezlik cheklovlarini (Reduced Speed) dasturlash.
 
 ---
 
-### 📉 3-BOB: Yakobian va Singulyarlik Tahlili
-*Ombor: [`kuka-robotics-phase-3-singularity`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-3-singularity)*
+### 📁 Phase 2: Fazoviy Geometriya va Kinematik Modellashtirish
+*Repozitoriy:* [`kuka-robotics-phase-2-kinematics-and-math`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-2-kinematics-and-math)
 
-* **08-Mavzu. Robot Yakobian matritsasi:**
-  * Geometrik Yakobian $J(\vec{q}) \in \mathbb{R}^{6\times 6}$:
-    $$\begin{bmatrix} \vec{v}_e \\ \vec{\omega}_e \end{bmatrix} = J(\vec{q}) \dot{\vec{q}}$$
-  * Bo'g'in tezliklarini flanets chiziqli va burchak tezliklariga o'tkazish.
-  * Kuchsizlantirilgan eng kichik kvadratlar (Damped Least Squares) orqali teskari tezliklarni hisoblash.
-* **09-Mavzu. Singulyarlik tahlili va manipulyativlik:**
-  * Singulyarlik sharti: $\det(J(\vec{q})) = 0$ va $\text{rank}(J) < 6$.
-  * **Bilak singulyarligi (Wrist Singularity):** $A_5 = 0^\circ$ (4 va 6-o'qlar kollinear bo'lib qolishi).
-  * **Yelka singulyarligi (Shoulder Singularity):** Bilak markazi $A_1$ o'qi ustiga tushishi.
-  * **Chegara singulyarligi (Elbow / Boundary Singularity):** Qo'l to'liq cho'zilishi yoki bukilishi.
-  * Yoshikawa manipulyativlik ellipsoidi $w = \sqrt{\det(J J^T)}$ tahlili.
-
----
-
-### 💻 4-BOB: KUKA Robot Language (KRL) Dasturlash
-*Ombor: [`kuka-robotics-phase-4-krl-programming`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-4-krl-programming)*
-
-* **10-Mavzu. KRL asoslari va ma'lumotlar arxitekturasi:**
-  * Modul tuzilishi: `.src` (dastur kodi) va `.dat` (ma'lumotlar deklaratsiyasi).
-  * Ma'lumot tiplari: `INT`, `REAL`, `BOOL`, `CHAR`, `FRAME`, `POS`, `E6POS`, `AXIS`, `E6AXIS`.
-  * Shartli operatorlar (`IF-THEN-ELSE`, `SWITCH-CASE`) va sikllar (`FOR`, `WHILE`, `LOOP`).
-* **11-Mavzu. Harakat buyruqlari va trayektoriyani boshqarish:**
-  * Nuqtadan-nuqtaga harakat: `PTP` (tez va optimallashtirilgan).
-  * Dekart fazosidagi chiziqli va aylana harakatlar: `LIN`, `CIRC`.
-  * Zamonaviy Spline harakatlari: `SLIN`, `SCIRC`, `SPL`.
-  * Trayektoriyani silliqlash (Approximation): `C_PTP`, `C_DIS`, `C_ORI`, `C_VEL`.
-  * Kontrollerning oldindan o'qish ko'rsatkichi: `$ADVANCE` tizim o'zgaruvchisi.
-* **12-Mavzu. Sanoat I/O va tutqich (Gripper) integratsiyasi:**
-  * Raqamli kirish va chiqish signallari: `$IN[n]` va `$OUT[n]`.
-  * Dastur to'xtashlari va kutishlar: `WAIT SEC`, `WAIT FOR $IN[1]==TRUE`.
-  * WorkVisual yordamida EtherCAT / PROFINET orqali Beckhoff yoki Festo modullarini ulash.
-  * Pnevmatik va elektr tutqichni boshqarish uchun xavfsiz sikllar yaratish.
-
----
-
-### 👁️ 5-BOB: Computer Vision (Texnik Ko'rish) va Kamerani Kalibrlash
-*Ombor: [`kuka-robotics-phase-5-advanced-integration`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-5-advanced-integration)*
-
-* **13-Mavzu. Kompyuter ko'rishi, PnP va Hand-Eye kalibratsiyasi:**
-  * Pinhole kamera modeli va ichki parametrlar matritsasi $K$.
-  * OpenCV yordamida kamerani shaxmat doskasi yoki ChArUco orqali kalibrlash.
-  * Perspective-$n$-Point (PnP) masalasi: `cv2.solvePnP` va uning chiqishidagi Rodrig burilish vektori $\vec{r}$.
-  * Python `cv2.Rodrigues()` orqali vektor va $3\times 3$ matritsa o'rtasida o'tish.
-  * Hand-Eye kalibratsiyasi: **Eye-in-Hand** va **Eye-to-Hand** konfiguratsiyalari.
-  * Klassik $AX = XB$ tenglamasi (Tsai-Lenz va Park-Martin usullari).
-  * Kameradan olingan ob'ekt koordinatasini KUKA `$BASE` tizimiga o'tkazish va konveyerdan buyumni saralash (Pick-and-Place).
-
----
-
-## 📐 Qisqa Matematik Formulalar
-
-Barcha matematik isbotlar, qadam-baqadam keltirib chiqarishlar va algoritmlar uchun alohida [**`MATH_CHEATSHEET.md`**](file:///c:/Users/muzaf/Desktop/kuka-robotics-course/MATH_CHEATSHEET.md) fayliga murojaat qiling.
-
-* **Qiya-simmetrik matritsa:**
-  $$K = [\vec{k}]_\times = \begin{bmatrix} 0 & -k_z & k_y \\ k_z & 0 & -k_x \\ -k_y & k_x & 0 \end{bmatrix}$$
-* **Rodrig formulasi:**
+#### • 05-rodrigues-rotation-formula
+* **Nazariya:** Fazoviy burilishlar nazariyasi, qiya-simmetrik matritsalar fazosi $\mathfrak{so}(3)$ va Lie algebrasi. Rodrigues formulasining vektorli va matritsaviy ($e^{\theta K}$) keltirib chiqarilishi:
   $$R(\vec{k}, \theta) = I + \sin(\theta) K + (1 - \cos(\theta)) K^2$$
-* **KUKA Euler $Z-Y'-X''$ ($A, B, C$) matritsasi:**
-  $$R_{KUKA}(A, B, C) = R_z(A) \cdot R_y(B) \cdot R_x(C)$$
-* **Hand-Eye tenglamasi:**
-  $$A X = X B$$
+* **Amaliyot:** Berilgan ixtiyoriy vektor va burchak boʻyicha $3\times 3$ aylanish matritsasini hamda uning teskarisini (matrix logarithm) hisoblovchi Python skriptini yaratish.
+
+#### • 06-rotation-matrices-and-quaternions
+* **Nazariya:** Eyler burchaklari (KUKA tizimidagi $Z-Y'-X''$ intrinsic $A, B, C$ burchaklari) va Gimbal Lock ($B = \pm 90^\circ$) muammosi. Toʻrt oʻlchamli Hamilton giperkompleks sonlari — birlik kvaternionlar ($\mathbb{H}$).
+* **Amaliyot:** Eyler burchaklarini ($A, B, C$) kvaternionlarga ($[w, x, y, z]$) va teskarisiga oʻtkazuvchi, singulyarlikdan xoli konverter modulini tuzish va SLERP interpolyatsiyasini sinash.
+
+#### • 07-dh-parameters-modelling
+* **Nazariya:** Denavit-Hartenberg (DH) koordinatalar oʻrnatish standarti (Standart va Modifikatsiyalangan Craig konvensiyalari). KR 6 R900-2 ning barcha 6 ta oʻqi uchun bogʻlanish zanjiri.
+* **Amaliyot:** Robotning geometrik chizmalari asosida uning rasmiy DH koordinata jadvallarini ($a_i, \alpha_i, d_i, \theta_i$) noldan qurish va boʻgʻin koordinata sistemalarini vizuallashtirish.
+
+#### • 08-forward-kinematics-solver
+* **Nazariya:** Toʻgʻri kinematika (Forward Kinematics) masalasi: Maxsus Evklid guruhi $SE(3)$ boʻyicha bir jinsli transformatsiya matritsalari koʻpaytmasi: $T_0^6(\vec{q}) = \prod_{i=1}^6 A_i(q_i)$.
+* **Amaliyot:** Boʻgʻin burchaklariga koʻra effektorning fazodagi yakuniy oʻrnini $[X, Y, Z, A, B, C]$ aniqlovchi Python kinematik solverini tuzish va KUKA `$POS_ACT` bilan solishtirish.
+
+#### • 09-inverse-kinematics-analytical
+* **Nazariya:** Analitik va geometrik teskari kinematika (Inverse Kinematics). Sferik bilak uchun Piper (Pieper) kriteriyasini qoʻllash: bilak markazini ($\vec{p}_{wc}$) pozitsiyadan ajratish.
+* **Amaliyot:** Maqsadli fazoviy nuqtaga yetishish uchun 6 ta motorning burchaklarini analitik usulda hisoblash, 8 ta geometrik yechim hamda KUKA Status ($S$) va Turn ($T$) bitlarini aniqlash.
+
+#### • 10-numerical-inverse-kinematics
+* **Nazariya:** Nyuton-Rafson iteratsiyasi, Yakobian transponirlangan va Levenberg-Marquardt (Damped Least Squares) algoritmlari orqali noaniq yoki murakkab kinematik zanjirlarni yechish.
+* **Amaliyot:** Python muhitida iterativ teskari kinematik solver yaratish, yaqinlashish tezligi va cheklovlar doirasida global konvergensiyani optimallashtirish.
 
 ---
 
-## 🏷️ Repozitoriylar Standarti va Boilerplate
+### 📁 Phase 3: Differensial Kinematika, Yakobian va Dinamika
+*Repozitoriy:* [`kuka-robotics-phase-3-differential-kinematics`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-3-differential-kinematics)
 
-Har bir Bob (Phase) repozitoriyasi ichidagi har bir mavzu jildida quyidagi qat'iy standart saqlanadi:
+#### • 11-jacobian-matrix-derivation
+* **Nazariya:** Geometrik Yakobian matritsasi: Boʻgʻin burchak tezliklarining ($\dot{\vec{q}}$) effektor chiziqli va burchak tezliklariga ($\vec{v}_e, \vec{\omega}_e$) differensial bogʻliqligi:
+  $$\vec{V}_e = J(\vec{q}) \cdot \dot{\vec{q}}$$
+* **Amaliyot:** KR 6 R900-2 uchun geometrik Yakobian matritsasini hisoblovchi ramziy (symbolic SymPy) va raqamli (NumPy) kod yozish.
+
+#### • 12-singularity-analysis
+* **Nazariya:** Singulyarlik holatlari matematikasi ($\det(J) = 0$ va $\text{rank}(J) < 6$): Bilak singulyarligi (Wrist $A_5=0^\circ$), Yelka singulyarligi (Shoulder) va Chegara (Elbow/Boundary) singulyarliklari.
+* **Amaliyot:** Determinant qiymatiga koʻra robot motorlari haddan tashqari tezlashib bloklanib qoladigan nuqtalarni aniqlash, Yoshikawa manipulyativlik ellipsoidini chizish va singulyarlikdan qochish traektoriyalari testi.
+
+#### • 13-robot-dynamics-and-forces
+* **Nazariya:** Manipulyator dinamikasi: Nyuton-Eyler va Lagranj-Eyler differensial tenglamalari. Massalar inersiyasi, Koriolis va markazdan qochma kuchlar matritsasi $C(\vec{q}, \dot{\vec{q}})$ hamda gravitatsiya kompensatsiyasi $\vec{g}(\vec{q})$.
+* **Amaliyot:** Belgilangan traektoriya boʻyicha harakat davomida 6 ta boʻgʻinda paydo boʻladigan dinamik momentlar (Torque $\vec{\tau}$) yuklanishini hisoblash va grafik koʻrinishida vizuallashtirish.
+
+#### • 14-force-torque-control
+* **Nazariya:** 6 oʻqli kuch-moment datchiklari (Force-Torque Sensors) fizikasi va KUKA.ForceTorqueControl dasturiy paketining ishlash prinsipi.
+* **Amaliyot:** Tashqi mexanik kuch taʼsirida robot xatti-harakatini virtual moslashtirish — Admittance va Impedance boshqaruv qonunlarini dasturlash.
+
+---
+
+### 📁 Phase 4: KUKA Robot Language (KRL) Dasturlash
+*Repozitoriy:* [`kuka-robotics-phase-4-krl-programming`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-4-krl-programming)
+
+#### • 15-krl-syntax-and-variables
+* **Nazariya:** KRL dasturlash tili arxitekturasi, maʼlumot turlari: `INT`, `REAL`, `BOOL`, `CHAR` hamda geometrik tuzilmalar (`FRAME`, `POS`, `E6POS`, `AXIS`, `E6AXIS`).
+* **Amaliyot:** `.src` (dastur mantigʻi) va `.dat` (maʼlumotlar bazasi va koordinatalar) fayllarining ichki arxitekturasini noldan yozish va WorkVisual orqali kontrollerga yuklash.
+
+#### • 16-advanced-motion-commands
+* **Nazariya:** Asosiy harakat buyruqlari: `PTP` (boʻgʻinlararo tezkor harakat), `LIN` (chiziqli), `CIRC` (aylana). Trayektoriyani silliqlash parametrlari (`C_PTP`, `C_DIS`, `C_ORI`, `C_VEL`) va `$ADVANCE` tizim koʻrsatkichi.
+* **Amaliyot:** Uzluksiz egri chiziqli harakatlarni zamonaviy Spline bloklari (`SLIN`, `SCIRC`, `SPL`) orqali Expert KRL rejimida dasturlash.
+
+#### • 17-logic-and-interrupts
+* **Nazariya:** Mantiqiy operatorlar, sikllar (`LOOP`, `WHILE`, `FOR`) hamda asinxron uzilishlar — `INTERRUPT` mexanizmi arxitekturasi.
+* **Amaliyot:** Avariya holati yuz berganda yoki tashqi datchikdan signal kelganda asosiy traektoriyani darhol toʻxtatib (`BRAKE`), xavfsiz pozitsiyaga chekinish dasturini tuzish.
+
+#### • 18-industrial-io-and-fieldbus
+* **Nazariya:** Sanoat tarmoqlari (Fieldbus): ProfiNet, EtherCAT protokollari va KUKA WorkVisual dasturi orqali I/O signallarini xaritalash (Signal Mapping).
+* **Amaliyot:** Raqamli kirish (`$IN[n]`) va chiqish (`$OUT[n]`) signallarini robot dasturiga bogʻlash, pnevmatik klapan va vakuum datchiklari bilan ishlash.
+
+#### • 19-subprograms-and-expert-programming
+* **Nazariya:** Global va lokal qism-dasturlar (Subroutines), funksiyalar (`DEFFCT`), qiymat va koʻrsatkich orqali argument uzatish qoidalari.
+* **Amaliyot:** Zavod ishlab chiqarish liniyasi uchun parametrik, xatoliklarni qayta ishlovchi va modulli avtomatlashtirish karkasini (framework) qurish.
+
+---
+
+### 📁 Phase 5: Tashqi Interfeyslar, ROS2 va Sunʼiy Intellekt
+*Repozitoriy:* [`kuka-robotics-phase-5-advanced-integration`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-5-advanced-integration)
+
+#### • 20-kuka-rsi-interface
+* **Nazariya:** KUKA RSI (Robot Sensor Interface) arxitekturasi: tashqi boshqaruv kompyuteridan Ethernet orqali real vaqtda (<12ms siklda) toʻgʻridan-toʻgʻri boshqarish.
+* **Amaliyot:** RSI XML-paketlar protokoli orqali robotga tashqi kompyuterdan oʻqlar va koordinatalar tuzatishlarini (corrections) uzatuvchi Python test serverini yozish.
+
+#### • 21-ros2-driver-integration
+* **Nazariya:** ROS 2 (Robot Operating System) arxitekturasi (Humble/Iron) va rasmiy KUKA ROS2 drayverlari (`kuka_robot_drivers`, `kuka_kr6_support`).
+* **Amaliyot:** ROS 2 tugunlari (Nodes) orqali KR AGILUS holatlarini real vaqtda oʻqish va RViz muhitida robotning 3D URDF modelini harakatlantirish.
+
+#### • 22-moveit2-trajectory-planning
+* **Nazariya:** MoveIt2 kutubxonasi yordamida toʻsiqlarni avtomatik aylanib oʻtuvchi traektoriyalarni rejalashtirish (OMPL rejalashtiruvchilari va FCL toʻqnashuv detektori).
+* **Amaliyot:** Virtual ishchi hududda dinamik paydo boʻlgan toʻsiqlarni chetlab oʻtib belgilangan manzilga xavfsiz yetib boruvchi traektoriyalarni hisoblash.
+
+#### • 23-computer-vision-pick-and-place
+* **Nazariya:** Pinhole kamera modeli, OpenCV `cv2.solvePnP` va Hand-Eye kalibratsiyasi (Tsai-Lenz va Park-Martin usullari boʻyicha $AX = XB$ matritsaviy tenglamasi).
+* **Amaliyot:** Kamera orqali ishchi stoldagi tasodifiy obʼektning $[X, Y, Z, A, B, C]$ koordinatasini aniqlab, robot koordinata tizimiga oʻtkazish va obʼektni aniq ushlab oluvchi dastur.
+
+---
+
+### 📁 Phase 6: Sanoatdagi Amaliy Ishlab Chiqarish Loyihalari
+*Repozitoriy:* [`kuka-robotics-phase-6-industrial-applications`](https://github.com/muzaffarbekmustafayev/kuka-robotics-phase-6-industrial-applications)
+
+#### • 24-trajectory-welding-and-glueing
+* **Texnologiya:** Sanoatda payvandlash (Arc Welding) va yelim surtish (Glueing/Dispensing) jarayonlarining qatʼiy texnologik talablari.
+* **Amaliyot:** Doimiy chiziqli tezlikni ($v = \text{const}$) va asbob burchagini saqlagan holda murakkab fazoviy 3D choklar boʻylab robot harakatini KRL Spline vositalarida dasturlash.
+
+#### • 25-palletizing-and-sorting-system
+* **Texnologiya:** Palletizatsiya (mahsulotlarni tagliklarga tartibli taxlash), konveyerga dinamik moslashuv (Conveyor Tracking) va aqlli saralash tizimlari.
+* **Amaliyot:** Konveyerdan uzluksiz kelayotgan mahsulotlarni sensorlar yordamida aniqlab, ularning oʻlchamiga koʻra turli qutilarga saralovchi yakuniy master-dasturni KRL va Python integratsiyasida yakunlash.
+
+---
+
+## 📐 Darslar Ichidagi Majburiy Boilerplate Standarti
+
+Har bir dars papkasining ichki tuzilishi qatʼiy quyidagi arxitekturaga ega boʻladi:
 
 ```
-kuka-robotics-phase-X-[nomi]/
-├── [mavzu-jildi]/          # Masalan: 03-rodrigues-formula/
-│   ├── src/
-│   │   ├── krl/            # .src va .dat KRL dasturlari
-│   │   └── scripts/        # Python / MATLAB skriptlari
-│   ├── sim/                # KUKA.Sim .vcmx, URDF fayllari
-│   ├── docs/               # Matematik hisoblar va rasmlar
-│   ├── CLAUDE.md           # AI yo'riqnomasi
-│   └── README.md           # Mavzu bo'yicha to'liq qo'llanma
+[ikki-raqamli-indeks]-[mavzu-nomi]/
+├── src/
+│   ├── krl/            # KRL (.src, .dat, .sub) haqiqiy kontroller kodlari
+│   └── scripts/        # Python / MATLAB tahlil va kinematik algoritmlari
+├── sim/                # KUKA.Sim Pro (.vcmx), URDF va 3D CAD modellar
+├── docs/               # Nazariy hisob-kitoblar, matematik isbotlar va sxemalar
+├── CLAUDE.md           # AI yordamchi agent uchun qoidalar va tezkor buyruqlar
+└── README.md           # Talaba uchun batafsil qoʻllanma, formulalar va laboratoriya vazifasi
 ```
 
 ---
 
-## 👥 Hamkorlik va Mualliflik
+## 🏷️ Majburiy Global GitHub Teglari (Topics)
 
-* **Muzaffarbek Mustafayev** — Kurs Muallifi va Arxitektori  
-  * Samarqand Davlat Universiteti (SamDU)  
-  * Tomsk Davlat Universiteti (TSU)  
+Barcha 7 ta repozitoriya oʻzaro qulay qidiruv va filtrlash uchun quyidagi 7 ta tegga ega boʻlishi shart:
+```
+kuka-robotics-course, mechatronics, krl-programming, ros2-robotics, industrial-automation, samdu, tsu
+```
+
+---
+
+## 👥 Mualliflik va Akademik Hamkorlik
+
+* **Muzaffarbek Mustafayev** — Kurs Arxitektori va Muallifi  
+  * Samarqand Davlat Universiteti (SamDU), Intellektual tizimlar va mexatronika kafedrasi  
+  * Milliy Tadqiqot Tomsk Davlat Universiteti (TSU), Robototexnika va mexatronika laboratoriyasi  
   * GitHub: [@muzaffarbekmustafayev](https://github.com/muzaffarbekmustafayev)
 
-* **Hamkor Oliy Ta'lim Muassasalari:**
-  * **SamDU** — Samarqand Davlat Universiteti (O'zbekiston)
+* **Hamkor Universitetlar:**
+  * **SamDU** — Samarqand Davlat Universiteti (Oʻzbekiston)
   * **TSU** — Milliy Tadqiqot Tomsk Davlat Universiteti (Rossiya)
 
 ---
 
-## 📄 Litsenziya
+## 📄 Litsenziya va Iqtibos
 
-Ushbu kurs ochiq manbali bo'lib, [MIT License](LICENSE) litsenziyasi asosida tarqatiladi.
+Ushbu kurs [MIT License](LICENSE) asosida ochiq tarqatiladi. Ilmiy maqola va tadqiqotlarda foydalanganda quyidagi iqtibosdan foydalaning:
+
+```bibtex
+@misc{mustafayev2026kuka,
+  author = {Mustafayev, Muzaffarbek},
+  title = {KUKA Industrial Robotics Course: 25-Lesson Academic & Industrial Specialization},
+  year = {2026},
+  publisher = {GitHub},
+  howpublished = {\url{https://github.com/muzaffarbekmustafayev/kuka-industrial-robotics-syllabus}},
+  note = {Joint educational and research program by Samarkand State University and Tomsk State University}
+}
+```
