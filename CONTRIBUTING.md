@@ -51,9 +51,17 @@ Inside each Phase repository, every individual topic folder (e.g., `05-rodrigues
 
 ---
 
-## 💻 3. Coding & Notation Standards
+## 💻 3. Coding, Mathematical Rigor & Proof Standards
 
-### 3.1 Python Standards
+### 3.1 Mathematical Theorems & Proofs Mandate (Majburiy Matematik Isbotlar Standarti)
+Har qanday kinematika, dinamika, boshqaruv yoki kompyuter ko'rishiga oid darsda KUKA ning ishlash matematikasi quyidagi qat'iy 5 bosqichda taqdim etilishi shart:
+1. **Teorema va Formulaning Aniq Nomi:** Qaysi qonuniyat yoki teoremaga asoslangani (masalan: *Rodrigues Rotation Theorem*, *Euler Intrinsic Tait-Bryan Representation*, *Denavit-Hartenberg Theorem*, *Pieper's Decoupling Criterion for Spherical Wrists*, *Geometric Jacobian Cross-Product Theorem*, *Yoshikawa Manipulability Measure*, *Tsai-Lenz Hand-Eye Theorem*).
+2. **Qadam-baqadam Matematik Keltirib Chiqarilishi (Step-by-step Proof):** Vektorli, matritsaviy yoki differensial tenglamalarning oraliq qadamlari tashlab ketilmasdan to'liq isboti bilan yozilishi shart.
+3. **KUKA KR 6 R900-2 Parametrlariga Proyeksiyasi:** Umumiy formula emas, balki KR AGILUS manipulyatorining aniq zavod parametrlariga bog'langan hisob-kitoblar.
+4. **KUKA KSS Kontrollerining Ichki Mexanikasi:** KUKA operatsion tizimi (KSS 8.3/8.6) ushbu matematikani qanday realizatsiya qilishi (masalan, $Z-Y'-X''$ orientatsiyasidan $A,B,C$ burchaklarini `atan2` orqali ajratish, Status $S$ va Turn $T$ bitlarini hisoblash, singulyar nuqtalarda tezlikni cheklash).
+5. **Dasturiy Tekshiruv (Verification Scripts):** `src/scripts/` jildida formulaning to'g'riligini raqamli va ramziy (SymPy/NumPy) tekshiruvchi runnable skriptlar.
+
+### 3.2 Python Standards
 * Python 3.10+ compatibility.
 * Follow **PEP 8** style guidelines (`flake8`, `black`).
 * Use type annotations for all mathematical functions:
@@ -67,7 +75,7 @@ Inside each Phase repository, every individual topic folder (e.g., `05-rodrigues
   ```
 * Include unit tests using `pytest` for all forward/inverse kinematics, Jacobian, and vision algorithms.
 
-### 3.2 KRL (KUKA Robot Language) Standards
+### 3.3 KRL (KUKA Robot Language) Standards
 * All KRL files must be paired: `.src` (logic) and `.dat` (data definitions).
 * Capitalize all KRL keywords, system variables, and motion commands (`DEF`, `END`, `PTP`, `LIN`, `CIRC`, `SLIN`, `SCIRC`, `$POS_ACT`, `$BASE`, `$TOOL`).
 * Initialize all `FRAME` and `E6POS` variables with descriptive names.

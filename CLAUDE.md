@@ -10,10 +10,16 @@ It serves as the central control panel and global syllabus hub for the **25-less
 5. `kuka-robotics-phase-5-advanced-integration` (Lessons 20 - 23)
 6. `kuka-robotics-phase-6-industrial-applications` (Lessons 24 - 25)
 
-## ⚠️ Critical Architectural Constraints
+## ⚠️ Critical Architectural & Mathematical Constraints
 * **NO LESSON CODE IN THIS REPO:** Do not add Python kinematics solvers or KRL `.src`/`.dat` files directly into this repository. All implementation code belongs in its designated Phase repository.
 * **ROBOT MODEL:** All kinematics, specifications, and parameters must strictly target the **KUKA KR 6 R900-2 (KR AGILUS-2)**.
-* **MATHEMATICAL RIGOR:** Always maintain notation consistency with [MATH_CHEATSHEET.md](file:///c:/Users/muzaf/Desktop/kuka-robotics-course/MATH_CHEATSHEET.md) ($SO(3)$, skew-symmetric operator $[\vec{k}]_\times$, Rodrigues formula, Tait-Bryan $Z-Y'-X''$ Euler angles $A, B, C$, and unit quaternions).
+* **MATHEMATICAL RIGOR & PROOFS MANDATE (Qat'iy Matematik Talab):**
+  Har bir darsda KUKA ning ishlash mexanikasi yoki kinematikasi kelsa, quyidagilar bo'lishi SHART:
+  1. **Qaysi formulaga / teoremaga asoslangani** (masalan, Euler-Rodrigues teoremasi, Pieper dekoupling teoremasi, Lie algebrasi $\mathfrak{so}(3)$ eksponensiali, Frenet-Serret egri chiziqlar nazariyasi, Tsai-Lenz $AX=XB$ teoremasi).
+  2. **Formulaning qadam-baqadam keltirib chiqarilishi va matematik isboti** (Step-by-step rigorous proof).
+  3. **KUKA KR 6 R900-2 manipulyatoriga tatbiqi** (aniq o'lchamlar, $d_1=400\text{mm}, a_1=25\text{mm}, a_2=455\text{mm}, d_4=420\text{mm}, d_6=80\text{mm}$).
+  4. **KUKA KSS kontrollerining ichki hisoblash algoritmi** (masalan, $B=\pm 90^\circ$ da Gimbal Lock ni yechish, Status va Turn bitlarini hisoblash, singulyarlikda burchak tezliklarini cheklash).
+  5. **Python / MATLAB da tasdiqlovchi dasturiy kod** (`src/scripts/` da to'liq unit testlari bilan).
 * **MANDATORY GITHUB TOPICS:**
   `kuka-robotics-course`, `mechatronics`, `krl-programming`, `ros2-robotics`, `industrial-automation`, `samdu`, `tsu`.
 
